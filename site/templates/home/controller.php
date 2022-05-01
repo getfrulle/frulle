@@ -1,5 +1,5 @@
 <?php
-return function($args) {
+return function() {
   return [
     'title' => 'Home',
   ];
