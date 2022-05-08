@@ -1,3 +1,6 @@
 <?= snippet('header'); ?>
-<h1><?= $title; ?></h1>
+<div class="hero">
+  <h1><?= $title; ?></h1>
+</diV>
+<?= snippet('post/cards'); ?>
 <?= snippet('footer'); ?>

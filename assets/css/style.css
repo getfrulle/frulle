@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial;
+}
+
+.hero {
+  background: #0d9488;
+  color: #fff;
+  text-align: center;
+  padding: 4rem;
+}
+
+.posts {
+  background: #eee;
+  padding: 2rem;
+}
+
+.post-cards {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.post-card {
+  box-shadow: 0 0 1rem rgb(0 0 0 / 0.125);
+  padding: 2rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 1.5;
+}
+
+.post-card p {
+  color: #666;
+}
