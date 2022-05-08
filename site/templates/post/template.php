@@ -1,3 +1,3 @@
 <?= snippet('header'); ?>
-<h1><?= $title; ?></h1>
+Post ID: <?= $id; ?>
 <?= snippet('footer'); ?>

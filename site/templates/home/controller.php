@@ -1,6 +1,6 @@
 <?php
-return function() {
+return function () {
   return [
-    'title' => 'Home',
+    'title' => 'Hello world',
   ];
 };

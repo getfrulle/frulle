@@ -1,9 +1,8 @@
 <?php
-route('/', function($matches) {
+route('/', function () {
   template('home');
 });
 
-route('form/:any', function($matches) {
-  print_R($matches);
-  echo 'form/:any';
+route('post/:num', function ($matches) {
+  template('home', ['id' => $matches[0]]);
 });

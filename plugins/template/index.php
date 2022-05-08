@@ -1,16 +1,23 @@
 <?php
-function template($template, $args = []) {
-  $filepath = path::get('templates') . "/$template/template.php";
+function template(string $_template, array $args = [])
+{
+  $_controllerpath = path::get('templates') . "/$_template/controller.php";
 
-  if(function_exists('controller')) {
-    $args['template'] = $template;
-    $args = controller($args);
+  if (function_exists('controller') && file_exists($_controllerpath)) {
+    $args = controller($args, $_template);
   }
 
-  if(!file_exists($filepath)) return;
+  $_templatepath = path::get('templates') . "/$_template/template.php";
 
-  extract($args);
+  if (!file_exists($_templatepath)) return;
 
-  require_once $filepath;
+  option::set('name', $_template, 'template');
+  option::set('args', $args, 'template');
+
+  if (is_array($args)) {
+    extract($args);
+  }
+
+  require_once $_templatepath;
   die;
 }

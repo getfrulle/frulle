@@ -1,10 +1,8 @@
 <?php
-function controller($args = []) {
-  $filepath = path::get('templates') . '/' . $args['template'] . '/controller.php';
-
-  if(!file_exists($filepath)) return;
-
-  $controller = include $filepath;
+function controller(array $args = [], string $_template)
+{
+  $_controllerpath = path::get('templates') . '/' . $_template . '/controller.php';
+  $controller = include $_controllerpath;
   $args = $controller($args);
 
   return $args;

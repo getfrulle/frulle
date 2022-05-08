@@ -1,22 +1,14 @@
 <?php
-function snippet($snippet, $args) {
-  echo 'asd';
-  $filepath = path::get('snippets') . "/$snippet.php";
+function snippet(string $snippet, array $args = [])
+{
+  $_snippetpath = path::get('snippets') . "/$snippet.php";
 
-  if(!file_exists($filepath)) return;
+  if (!file_exists($_snippetpath)) return;
 
-  extract($args);
-  
-  require_once $filepath;
-}
-/*
-<?php
-
-  if(!file_exists($filepath)) return;
+  $args = array_merge(option::get('args', 'template'), $args);
 
   extract($args);
 
-  require_once $filepath;
-  die;
+  include $_snippetpath;
+  echo "\n";
 }
-*/
