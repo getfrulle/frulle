@@ -11,7 +11,11 @@ class option
 
   public static function set($key, $value, $namespace = 'options')
   {
-    //if(!isset($GLOBALS['frulle']))
     $GLOBALS['frulle'][$namespace][$key] = $value;
   }
+}
+
+function option($key = null, $namespace = 'options')
+{
+  return option::get($key, $namespace);
 }
