@@ -5,7 +5,9 @@ function snippet(string $snippet, array $args = [])
 
   if (!file_exists($_snippetpath)) return;
 
-  $args = array_merge(option::get('args', 'template'), $args);
+  if (option::get('args', 'node')) {
+    $args = array_merge(option::get('args', 'node'), $args);
+  }
 
   extract($args);
 
