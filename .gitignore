@@ -1,4 +1,8 @@
 tests
+_tests
 site/settings.php
 index.php
 docs
+/vendor/*
+.phpunit.result.cache
+phpinfo.php
